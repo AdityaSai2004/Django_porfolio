@@ -1,0 +1,5 @@
+Hi this is a blog {% for post in blogs %}
+<h2>{{ post.title }}</h2>
+<p>{{ post.description|truncatewords:30 }}</p>
+<p>{{ post.date }}</p>
+{% endfor %}
