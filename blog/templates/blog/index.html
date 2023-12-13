@@ -1,8 +1,9 @@
-There {% if blogs.count == 1 %}is{% else %}are{% endif %} {{blogs.count}}
+{% extends 'portfolio/base.html'%} {% block content %} {% load static %} There
+{% if blogs.count == 1 %}is{% else %}are{% endif %} {{blogs.count}}
 blog{{blogs.count|pluralize}}
 <br />
 {% for post in blogs %}
 <a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a>
 <p>{{ post.date|date:'M d Y'|upper }}</p>
 <p>{{ post.description|truncatewords:30 }}</p>
-{% endfor %}
+{% endfor %} {% endblock %}
