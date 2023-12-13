@@ -6,3 +6,6 @@ class Blogs(models.Model):
     description = models.CharField(max_length=250)
     date = models.DateField()
     text = models.TextField()
+
+    def __str__(self) -> str:
+        return self.title
